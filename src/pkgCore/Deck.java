@@ -44,4 +44,25 @@ public class Deck {
 	{
 		return cardsInDeck.size();
 	}
+	
+	//here is getRemaining
+	public int getRemaining(Object eNum){
+		int j=0;//declare counter
+		if(eNum instanceof pkgEnum.eRank) {//use instanceof
+			for (int i=0;i<cardsInDeck.size();i++) {//go through ArrayList
+				if(cardsInDeck.get(i).geteRank()==eNum)
+					j+=1;
+			}
+			return j;
+		}
+		else if (eNum instanceof pkgEnum.eSuit) {
+			for (int i=0;i<cardsInDeck.size();i++) {
+				if(cardsInDeck.get(i).geteSuit()==eNum)
+					j+=1;
+			}
+			return j;
+		}
+		return 0;
+	}
+
 }
